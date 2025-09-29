@@ -30,7 +30,37 @@
         line-height: 300px;
         font-size: 24px;
         cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: float 3s ease-in-out infinite;
     }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .card:hover {
+        background-color: #e0e0e0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        animation: enlarge 0.3s forwards;
+    }
+
+    @keyframes enlarge {
+        to {
+            transform: scale(135%);
+        }
+    }
+
+
 
     body {
         font-family: Arial, sans-serif;
@@ -54,23 +84,27 @@
     }
 </style>
 
-<header>
-    <h1>Scratch It</h1>
-</header>
-<nav>
-    <p> Collected:</p>
-</nav>
-
 <body>
-    <div class="card">
-        <h2>1</h2>
-    </div>
-    <div class="card">
-        <h2>2</h2>
-    </div>
-    <div class="card">
-        <h2>3</h2>
-    </div>
+    <header>
+        <h1>Welcome to Scratch It!</h1>
+    </header>
+    <nav>
+        <p> Collected:</p>
+    </nav>
+
+    <main>
+        <h2>Click on a card to scratch and reveal your prize!</h2>
+        <div class="card">
+            <h2>1</h2>
+        </div>
+        <div class="card">
+            <h2>2</h2>
+        </div>
+        <div class="card">
+            <h2>3</h2>
+        </div>
+    </main>
+</body>
 </html>
 
 <!-- add float animations per card
